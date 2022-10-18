@@ -1,0 +1,5 @@
+server/ftp.js
+.DS_Store
+server/package-lock.json
+node_modules
+server/.env
