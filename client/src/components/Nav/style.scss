@@ -1,0 +1,33 @@
+.nav {
+  display: inline-flex;
+  align-items: center;
+  // border: 1px solid black;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  padding: 5px;
+  padding-left: 18px;
+  position: fixed;
+  opacity: 0.9;
+  background-color: #004e00;
+}
+
+.links {
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding-top: 15px;
+  color: white;
+  &:hover {
+    color: black;
+  }
+}
+
+.title {
+  font-size: 3rem;
+  text-decoration: none;
+  color: white;
+  padding-right: 3rem;
+  &:hover {
+    color: black;
+  }
+}

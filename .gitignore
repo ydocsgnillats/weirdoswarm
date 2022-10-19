@@ -3,3 +3,4 @@ server/ftp.js
 server/package-lock.json
 node_modules
 server/.env
+client/package-lock.json
