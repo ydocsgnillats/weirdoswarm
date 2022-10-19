@@ -1,12 +1,11 @@
-// import { useNavigate } from 'react-router-dom';
 import "./style.scss";
 
-const SearchBar = ({ searchQuery, setSearchQuery }) => {
+const SearchBar = (props) => {
   return (
     <div className="search">
       <input
-        value={searchQuery}
-        onInput={(e) => setSearchQuery(e.target.value)}
+        value={"test"}
+        onInput={(e) => props.setSearchQuery(e.target.value)}
         type="text"
         id="header-search"
         placeholder="Search Setlists..."
