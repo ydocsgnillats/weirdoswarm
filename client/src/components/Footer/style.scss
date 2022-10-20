@@ -1,0 +1,19 @@
+@import "../../App.scss";
+
+.footer {
+  @include breakpoint(md) {
+    display: inline-flex;
+  }
+
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: #004e00;
+  justify-content: right;
+  height: 1.5rem;
+}
+
+.link {
+  color: white;
+  padding: 0 2%;
+}

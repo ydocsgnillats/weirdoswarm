@@ -4,8 +4,7 @@ const SearchBar = (props) => {
   return (
     <div className="search">
       <input
-        value={"test"}
-        onInput={(e) => props.setSearchQuery(e.target.value)}
+        onChange={(e) => props.setSearchQuery(e.target.value)}
         type="text"
         id="header-search"
         placeholder="Search Setlists..."

@@ -1,0 +1,23 @@
+@import "../../App.scss";
+
+.meetup {
+  @include breakpoint(md) {
+    display: inline-flex;
+  }
+  padding: 5rem;
+}
+.image {
+  width: 60vw;
+  @include breakpoint(md) {
+    width: 20vw;
+  }
+  pointer-events: none;
+}
+
+.content-box {
+  width: 50%;
+}
+
+.info {
+  padding: 2rem;
+}
