@@ -5,6 +5,7 @@
     display: inline-flex;
   }
   padding: 5rem;
+  width: 65%;
 }
 .image {
   width: 60vw;
@@ -15,7 +16,9 @@
 }
 
 .content-box {
-  width: 50%;
+  @include breakpoint(md) {
+    width: 50%;
+  }
 }
 
 .info {

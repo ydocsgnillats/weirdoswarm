@@ -8,6 +8,11 @@ import { useState, useEffect } from "react";
 function Meetups() {
   const [filter, setFilter] = useState("");
   const [meetups, setMeetups] = useState([]);
+  const [images, setImages] = useState([
+    require("../../assets/atlmeetup.jpeg"),
+    require("../../assets/ashevillemeetup.jpeg"),
+    require("../../assets/denvermeetup.jpeg"),
+  ]);
 
   //   useEffect(() => {
   //     fetch("/api")
@@ -54,10 +59,10 @@ function Meetups() {
                       <Meetup
                         key={i}
                         city={meet.data.city}
-                        data={meet.data.date}
+                        date={meet.data.date}
                         time={meet.data.time}
                         link={meet.data.link}
-                        source={require("../../assets/atlmeetup.jpeg")}
+                        source={images[meet.data.source]}
                         location={meet.data.location}
                         info={meet.data.info}
                       />
@@ -66,10 +71,10 @@ function Meetups() {
                     <Meetup
                       key={i}
                       city={meet.data.city}
-                      data={meet.data.date}
+                      date={meet.data.date}
                       time={meet.data.time}
                       link={meet.data.link}
-                      source={require("../../assets/atlmeetup.jpeg")}
+                      source={images[meet.data.source]}
                       location={meet.data.location}
                       info={meet.data.info}
                     />

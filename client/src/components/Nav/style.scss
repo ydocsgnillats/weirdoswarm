@@ -23,17 +23,48 @@
   padding-top: 15px;
   padding-right: 15px;
   color: white;
+  display: none;
+  &:hover {
+    color: black;
+  }
+  @include breakpoint(md) {
+    display: inline-flex;
+  }
+}
+
+.links-mobile {
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding-top: 15px;
+  padding-right: 15px;
+  color: white;
   &:hover {
     color: black;
   }
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 2rem;
   text-decoration: none;
   color: white;
   padding-right: 3rem;
+  padding-top: 15px;
+  @include breakpoint(md) {
+    padding-top: 0;
+    font-size: 3rem;
+  }
   &:hover {
     color: black;
+  }
+}
+
+.hamburger {
+  display: block;
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  color: white;
+  @include breakpoint(md) {
+    display: none;
   }
 }
