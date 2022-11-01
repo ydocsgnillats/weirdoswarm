@@ -12,7 +12,6 @@ var setlistfmClient = new setlistfmJs({
 });
 
 app.get("/api", (req, res) => {
-  // res.json({ users: ["userOne", "userTwo", "userThree"] });
   setlistfmClient
     .getArtistSetlists("f58384a4-2ad2-4f24-89c5-c7b74ae1cce7", {
       p: 1,
@@ -27,6 +26,10 @@ app.get("/api", (req, res) => {
       // Returns error
       console.log("error", error);
     });
+});
+
+app.get("*", (req, res) => {
+  res.redirect("/");
 });
 
 app.listen(5001, () => console.log("Server started on port 5001"));
