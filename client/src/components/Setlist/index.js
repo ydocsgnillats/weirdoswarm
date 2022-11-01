@@ -7,14 +7,18 @@ function Setlist(props) {
       <h4 className="city">{props.city}</h4>
       {props.info && <p className="info">{props.info}</p>}
       <div className="songs">
-        {props.sets.set.map((s, i) => (
-          <div key={i}>
-            <h2>{s.name || "Unnamed Set"}</h2>
-            {s.song.map((song) => (
-              <p key={song.name}>{song.name}</p>
-            ))}
-          </div>
-        ))}
+        {props.sets.set.length ? (
+          props.sets.set.map((s, i) => (
+            <div key={i}>
+              <h2>{s.name || (i > 0 ? "Set" : "")}</h2>
+              {s.song.map((song) => (
+                <p key={song.name}>{song.name}</p>
+              ))}
+            </div>
+          ))
+        ) : (
+          <p>Not Available Yet</p>
+        )}
       </div>
     </div>
   );

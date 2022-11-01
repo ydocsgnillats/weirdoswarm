@@ -42,11 +42,6 @@ function Sets() {
                         venue={row.venue.name}
                         city={`${row.venue.city.name}, ${row.venue.city.stateCode}`}
                         info={row.info}
-                        songs={
-                          row.sets.set[0]?.song || [
-                            { name: "No Songs Available Yet." },
-                          ]
-                        }
                         sets={row.sets}
                       />
                     ))
@@ -56,11 +51,6 @@ function Sets() {
                       venue={row.venue.name}
                       city={`${row.venue.city.name}, ${row.venue.city.stateCode}`}
                       info={row.info}
-                      songs={
-                        row.sets.set[0]?.song || [
-                          { name: "No Songs Available Yet." },
-                        ]
-                      }
                       sets={row.sets}
                     />
                   ))}
