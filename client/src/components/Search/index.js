@@ -7,7 +7,7 @@ const SearchBar = (props) => {
         onChange={(e) => props.setSearchQuery(e.target.value.toLowerCase())}
         type="text"
         id="header-search"
-        placeholder="Search Setlists..."
+        placeholder="Search Setlists"
         name="searchbar"
         className="search-input"
       />
