@@ -11,8 +11,8 @@ function Setlist(props) {
           props.sets.set.map((s, i) => (
             <div key={i}>
               <h2>{s.name || (i > 0 ? "Set" : "")}</h2>
-              {s.song.map((song) => (
-                <p key={song.name}>{song.name}</p>
+              {s.song.map((song, i) => (
+                <p key={`${song.name}+${i}`}>{song.name}</p>
               ))}
             </div>
           ))

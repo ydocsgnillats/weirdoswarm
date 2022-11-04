@@ -11,6 +11,23 @@ var setlistfmClient = new setlistfmJs({
   language: "en", // defaults to "en"
 });
 
+app.get("/api/:page", function (req, res) {
+  setlistfmClient
+    .getArtistSetlists("f58384a4-2ad2-4f24-89c5-c7b74ae1cce7", {
+      p: req.params["page"],
+    })
+    .then(
+      (setlists) => {
+        res.send(setlists);
+      }
+      // res.json({ users: ["userOne", "userTwo", "userThree"] });
+    )
+    .catch(function (error) {
+      // Returns error
+      console.log("error", error);
+    });
+});
+
 app.get("/api", (req, res) => {
   setlistfmClient
     .getArtistSetlists("f58384a4-2ad2-4f24-89c5-c7b74ae1cce7", {
