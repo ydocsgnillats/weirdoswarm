@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 
 function Sets() {
   const [backendData, setBackendData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [filter, setFilter] = useState("");
   const [page, setPage] = useState(1);
 
@@ -28,13 +29,18 @@ function Sets() {
   }, [backendData]);
 
   window.onscroll = debounce(() => {
-    if (
-      window.innerHeight + document.documentElement.scrollTop ===
-      document.documentElement.offsetHeight
-    ) {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
       nextPage();
     }
   }, 100);
+
+  useEffect(() => {
+    setFilteredData(
+      backendData.filter((set) =>
+        set?.venue.name.toLowerCase().includes(filter)
+      )
+    );
+  }, [filter]);
 
   return (
     <>
@@ -45,29 +51,33 @@ function Sets() {
             <p>Loading...</p>
           ) : (
             <div>
-              {filter
-                ? backendData
-                    .filter((set) =>
-                      set.venue.name.toLowerCase().includes(filter)
-                    )
-                    .map((row, i) => (
-                      <Setlist
-                        key={i}
-                        venue={row.venue.name}
-                        city={`${row.venue.city.name}, ${row.venue.city.stateCode}`}
-                        info={row.info}
-                        sets={row.sets}
-                      />
-                    ))
-                : backendData.map((row, i) => (
+              {filter ? (
+                filteredData.length > 0 ? (
+                  filteredData.map((row, i) => (
                     <Setlist
                       key={i}
-                      venue={row.venue.name}
-                      city={`${row.venue.city.name}, ${row.venue.city.stateCode}`}
-                      info={row.info}
-                      sets={row.sets}
+                      venue={row?.venue.name}
+                      city={`${row?.venue.city.name}, ${row?.venue.city.stateCode}`}
+                      date={row?.eventDate}
+                      info={row?.info}
+                      sets={row?.sets}
                     />
-                  ))}
+                  ))
+                ) : (
+                  <p>No results found</p>
+                )
+              ) : (
+                backendData.map((row, i) => (
+                  <Setlist
+                    key={i}
+                    venue={row?.venue.name}
+                    city={`${row?.venue.city.name}, ${row?.venue.city.stateCode}`}
+                    date={row?.eventDate}
+                    info={row?.info}
+                    sets={row?.sets}
+                  />
+                ))
+              )}
             </div>
           )}
         </div>
