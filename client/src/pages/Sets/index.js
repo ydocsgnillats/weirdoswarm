@@ -3,7 +3,7 @@ import Nav from "../../components/Nav";
 import Content from "../../components/Content";
 import Setlist from "../../components/Setlist";
 import debounce from "lodash.debounce";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function Sets() {
   const [backendData, setBackendData] = useState([]);
@@ -11,12 +11,28 @@ function Sets() {
   const [filter, setFilter] = useState("");
   const [page, setPage] = useState(1);
 
+  const hiddenRef = useRef();
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  });
+
+  const scrollHandler = debounce(() => {
+    if (
+      window.pageYOffset + window.innerHeight >=
+      hiddenRef.current.offsetTop
+    ) {
+      console.log(`Hidden element is now visible`);
+      nextPage();
+    }
+  }, 100);
+
   useEffect(() => {
     fetch(`/api/${page}`)
       .then((response) => response.json())
       .then((data) => {
         setBackendData(backendData.concat(data.setlist));
-        console.log(backendData);
       });
   }, [page]);
 
@@ -28,11 +44,11 @@ function Sets() {
     console.info("rows", backendData);
   }, [backendData]);
 
-  window.onscroll = debounce(() => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-      nextPage();
-    }
-  }, 100);
+  // window.onscroll = debounce(() => {
+  //   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+  //     nextPage();
+  //   }
+  // }, 100);
 
   useEffect(() => {
     setFilteredData(
@@ -45,7 +61,7 @@ function Sets() {
   return (
     <>
       <Nav setSearchQuery={(value) => setFilter(value)} />
-      <Content>
+      <Content footRef={hiddenRef}>
         <div>
           {typeof backendData === "undefined" ? (
             <p>Loading...</p>
@@ -64,7 +80,7 @@ function Sets() {
                     />
                   ))
                 ) : (
-                  <p>No results found</p>
+                  <Setlist venue="No results found." />
                 )
               ) : (
                 backendData.map((row, i) => (

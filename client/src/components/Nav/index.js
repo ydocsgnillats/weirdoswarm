@@ -20,7 +20,6 @@ function Nav(props) {
   useEffect(() => {
     window.onscroll = () => {
       if (window.pageYOffset === 0) {
-        console.log("top");
         setSticky(false);
       }
       if (window.pageYOffset > 700) {

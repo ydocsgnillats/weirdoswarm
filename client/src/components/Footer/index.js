@@ -2,7 +2,7 @@ import "./style.scss";
 
 function Footer(props) {
   return (
-    <div className="footer">
+    <div ref={props.footRef} className="footer">
       <p className="link">
         Setlist info from{" "}
         <a href="https://www.setlist.fm" target="_blank">

@@ -8,7 +8,7 @@ function Content(props) {
         <div className="leftside"></div>
         <div className="middle">{props.children}</div>
         <div className="rightside"></div>
-        <Footer />
+        <Footer footRef={props.footRef} />
       </div>
     </>
   );
