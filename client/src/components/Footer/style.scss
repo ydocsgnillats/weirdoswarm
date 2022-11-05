@@ -5,12 +5,13 @@
     display: inline-flex;
   }
 
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  background-color: #004e00;
-  justify-content: right;
-  height: 1.5rem;
+  width: 100vw;
+  background-color: black;
+  justify-content: center;
+  bottom: 15px;
+  right: 0;
+  align-items: center;
+  height: 2rem;
 }
 
 .link {

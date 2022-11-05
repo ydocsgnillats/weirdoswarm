@@ -45,7 +45,7 @@ function Sets() {
   return (
     <>
       <Nav setSearchQuery={(value) => setFilter(value)} />
-      <Content source="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi0.wp.com%2Flosbuffo.com%2Fwp-content%2Fuploads%2F2018%2F01%2F2-King-Gizzard-and-The-Lizard-Wizard-CMW-Indie-Underground-Aaron-McMillan1.jpg%3Ffit%3D1038%252C563&f=1&nofb=1&ipt=840c7be1fda820af5bf4231d93b0fc847096b878cba3c113402472e3b40d7a8a&ipo=images">
+      <Content>
         <div>
           {typeof backendData === "undefined" ? (
             <p>Loading...</p>

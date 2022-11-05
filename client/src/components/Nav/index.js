@@ -1,38 +1,84 @@
 import "./style.scss";
-import { Link } from "react-router-dom";
 import Search from "../Search";
 import Hamburger from "hamburger-react";
-import { useState } from "react";
+import Picture from "../Picture";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Nav(props) {
   const [open, setOpen] = useState(false);
+  const [sticky, setSticky] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleScroll = (page) => {
+    navigate(page);
+    document.querySelector("nav").scrollIntoView({ behavior: "smooth" });
+    setSticky(true);
+  };
+
+  useEffect(() => {
+    window.onscroll = () => {
+      if (window.pageYOffset === 0) {
+        console.log("top");
+        setSticky(false);
+      }
+      if (window.pageYOffset > 700) {
+        setSticky(true);
+      }
+    };
+  });
+
+  useEffect(() => {
+    setSticky(true);
+  }, [navigate]);
+
+  useEffect(() => {
+    setSticky(false);
+  }, []);
 
   return (
-    <div className="nav">
-      <Link className="title" to="/">
-        Weirdo Swarm
-      </Link>
-      <Link className="links" to="/sets">
-        Sets
-      </Link>
-      <Link className="links" to="/meetups">
-        Meetups
-      </Link>
-      <a
-        className="links"
-        href="https://jollyswapper.com/gatorgang"
-        target="_blank"
-      >
-        Gift Exchange
-      </a>
+    <>
+      <Picture source={require("../../assets/weirdoswarm.png")} />
+      <nav className={`nav ${sticky ? "sticky" : ""}`}>
+        <button
+          onClick={() => handleScroll("/sets")}
+          className="links"
+          to="/sets"
+        >
+          Sets
+        </button>
+        <button onClick={() => handleScroll("/meetups")} className="links">
+          Meetups
+        </button>
+        <a
+          className="links"
+          href="https://jollyswapper.com/gatorgang"
+          target="_blank"
+        >
+          Gift Exchange
+        </a>
+        <Search setSearchQuery={(value) => props.setSearchQuery(value)} />
+        <div className="hamburger">
+          <Hamburger toggled={open} toggle={setOpen} />
+        </div>
+      </nav>
       {open && (
-        <>
-          <Link className="links-mobile" to="/sets">
+        <div className={`mobile-links ${sticky ? "sticky" : ""}`}>
+          <button
+            onClick={() => handleScroll("/sets")}
+            className="links-mobile"
+            to="/sets"
+          >
             Sets
-          </Link>
-          <Link className="links-mobile" to="/meetups">
+          </button>
+          <button
+            onClick={() => handleScroll("/meetups")}
+            className="links-mobile"
+            to="/meetups"
+          >
             Meetups
-          </Link>
+          </button>
           <a
             className="links-mobile"
             href="https://jollyswapper.com/gatorgang"
@@ -40,13 +86,9 @@ function Nav(props) {
           >
             Gift Exchange
           </a>
-        </>
+        </div>
       )}
-      <Search setSearchQuery={(value) => props.setSearchQuery(value)} />
-      <div className="hamburger">
-        <Hamburger toggled={open} toggle={setOpen} />
-      </div>
-    </div>
+    </>
   );
 }
 

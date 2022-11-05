@@ -1,22 +1,25 @@
 @import "../../App.scss";
 
 .search {
-  position: absolute;
+  position: unset;
   right: 80px;
   top: 0;
-  padding-top: 6px;
-  // align-items: center;
+  width: 83%;
+  padding: 6px 6px;
+  align-items: center;
   @include breakpoint(md) {
+    position: absolute;
     top: unset;
-    padding-top: 0;
+    padding: 0;
     right: 17px;
+    width: unset;
   }
 }
 
 .search-input {
   padding: 0.75rem;
   border-radius: 5px;
-  width: 30vw;
+  width: 60vw;
   font-size: 16px !important;
   @include breakpoint(md) {
     width: 20vw;
