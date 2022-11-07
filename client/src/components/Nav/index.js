@@ -2,14 +2,17 @@ import "./style.scss";
 import Search from "../Search";
 import Hamburger from "hamburger-react";
 import Picture from "../Picture";
+import Modal from "../Modal";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Nav(props) {
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const [sticky, setSticky] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleScroll = (page) => {
     navigate(page);
@@ -57,6 +60,11 @@ function Nav(props) {
         >
           Gift Exchange
         </a>
+        {location.pathname == "/meetups" && (
+          <button className="links" onClick={() => setOpenModal(true)}>
+            Host A Meetup
+          </button>
+        )}
         <Search setSearchQuery={(value) => props.setSearchQuery(value)} />
         <div className="hamburger">
           <Hamburger toggled={open} toggle={setOpen} />
@@ -78,6 +86,11 @@ function Nav(props) {
           >
             Meetups
           </button>
+          {location.pathname == "/meetups" && (
+            <button className="links-mobile" onClick={() => setOpenModal(true)}>
+              Host A Meetup
+            </button>
+          )}
           <a
             className="links-mobile"
             href="https://jollyswapper.com/gatorgang"
@@ -87,6 +100,11 @@ function Nav(props) {
           </a>
         </div>
       )}
+      <Modal
+        show={openModal}
+        option="meetup"
+        setShow={() => setOpenModal(false)}
+      />
     </>
   );
 }

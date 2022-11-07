@@ -1,10 +1,8 @@
 @import "../../App.scss";
 
 .picture {
-  height: 75vh;
+  height: 40vh;
   width: 100vw;
-  margin-left: -8px;
-  margin-top: -8px;
   pointer-events: none;
 
   @include breakpoint(md) {

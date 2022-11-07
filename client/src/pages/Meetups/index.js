@@ -42,7 +42,7 @@ function Meetups() {
   }, [meetups]);
 
   return (
-    <>
+    <div className="meetups">
       <Nav setSearchQuery={(target) => setFilter(target)} />
       <Content>
         <div>
@@ -83,7 +83,7 @@ function Meetups() {
           )}
         </div>
       </Content>
-    </>
+    </div>
   );
 }
 

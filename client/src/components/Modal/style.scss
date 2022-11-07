@@ -1,0 +1,108 @@
+@import "../../App.scss";
+
+.modal {
+  position: fixed;
+  top: 10%;
+  z-index: 1;
+  background-color: black;
+  opacity: 0.8;
+  padding: 1rem;
+  margin: 2rem 2rem;
+  border: 1px solid red;
+  border-radius: 6px;
+
+  @include breakpoint(md) {
+    left: 10%;
+    top: 10%;
+    margin: 1rem 15rem;
+  }
+}
+
+.meetup-modal {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 15px;
+  margin-top: 2rem;
+  width: 75vw;
+  height: 50vh;
+  overflow: scroll;
+  @include breakpoint(md) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: unset;
+    height: unset;
+  }
+
+  > input {
+    padding: 20px;
+  }
+}
+
+.contact-modal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 75vw;
+  margin-top: 2rem;
+  @include breakpoint(md) {
+    width: 30vw;
+  }
+}
+
+label {
+  color: white;
+  padding: 1rem;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.input {
+  margin-bottom: 1rem;
+  width: 80%;
+  @include breakpoint(md) {
+    padding: 0;
+    width: unset;
+  }
+}
+
+.close {
+  display: flex;
+  float: right;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+  margin-top: -1rem;
+  margin-right: -0.8rem;
+  color: red;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.submit {
+  border: 1px solid red;
+  color: red;
+  background-color: black;
+  padding: 15px;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  display: flex;
+  margin-left: 30%;
+  margin-top: 1rem;
+  cursor: pointer;
+  &:hover {
+    background-color: red;
+    color: black;
+  }
+  @include breakpoint(md) {
+    margin-left: 40%;
+  }
+}
+
+h3 {
+  color: red;
+  display: flex;
+  font-size: 2rem;
+  margin-top: -0.15rem;
+  align-items: center;
+  float: center;
+  justify-content: center;
+}

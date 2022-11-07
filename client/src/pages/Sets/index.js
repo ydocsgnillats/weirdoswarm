@@ -26,7 +26,7 @@ function Sets() {
       console.log(`Hidden element is now visible`);
       nextPage();
     }
-  }, 100);
+  }, 500);
 
   useEffect(() => {
     fetch(`/api/${page}`)

@@ -1,6 +1,10 @@
 import "./style.scss";
+import { useState } from "react";
+import Modal from "../Modal";
 
 function Footer(props) {
+  const [openContactModal, setOpenContactModal] = useState(false);
+
   return (
     <div ref={props.footRef} className="footer">
       <p className="link">
@@ -15,6 +19,16 @@ function Footer(props) {
           Tetrachrome
         </a>
       </p>
+      <p className="link">
+        <button onClick={() => setOpenContactModal(true)} className="contact">
+          Contact Us
+        </button>
+      </p>
+      <Modal
+        show={openContactModal}
+        option="contact"
+        setShow={() => setOpenContactModal(false)}
+      />
     </div>
   );
 }

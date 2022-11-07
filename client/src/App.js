@@ -1,6 +1,6 @@
 import "./App.scss";
-import Home from "./pages/Home";
 import Sets from "./pages/Sets";
+import Footer from "./components/Footer";
 import Meetups from "./pages/Meetups";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

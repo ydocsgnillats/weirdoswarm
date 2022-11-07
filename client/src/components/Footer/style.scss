@@ -18,3 +18,21 @@
   color: white;
   padding: 0 2%;
 }
+
+.contact {
+  color: red;
+  border: 1px solid red;
+  border-radius: 6px;
+  padding: 10px;
+  background-color: black;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  @include breakpoint(md) {
+    margin-bottom: 0;
+  }
+  &:hover {
+    background-color: red;
+    color: black;
+  }
+}
