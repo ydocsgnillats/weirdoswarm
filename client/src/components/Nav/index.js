@@ -65,7 +65,10 @@ function Nav(props) {
             Host A Meetup
           </button>
         )}
-        <Search setSearchQuery={(value) => props.setSearchQuery(value)} />
+        <Search
+          setSearchQuery={(value) => props.setSearchQuery(value)}
+          placeHolder={location.pathname}
+        />
         <div className="hamburger">
           <Hamburger toggled={open} toggle={setOpen} />
         </div>
