@@ -16,7 +16,7 @@ const SearchBar = (props) => {
         setPlaceHolderText("Search Meetups");
         break;
       default:
-        setPlaceHolderText("Search");
+        setPlaceHolderText("Search Setlists");
         break;
     }
   }, [location]);
