@@ -1,6 +1,6 @@
 import "./App.scss";
 import Sets from "./pages/Sets";
-import Footer from "./components/Footer";
+import Songs from "./pages/Songs";
 import Meetups from "./pages/Meetups";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -11,6 +11,7 @@ function App() {
         <Route path="/" element={<Sets />} />
         <Route path="/sets" element={<Sets />} />
         <Route path="/meetups" element={<Meetups />} />
+        <Route path="/songs" element={<Songs />} />
       </Routes>
     </BrowserRouter>
   );

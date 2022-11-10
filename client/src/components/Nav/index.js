@@ -53,6 +53,9 @@ function Nav(props) {
         <button onClick={() => handleScroll("/meetups")} className="links">
           Meetups
         </button>
+        <button onClick={() => handleScroll("/songs")} className="links">
+          Songs
+        </button>
         <a
           className="links"
           href="https://jollyswapper.com/gatorgang"
@@ -88,6 +91,12 @@ function Nav(props) {
             to="/meetups"
           >
             Meetups
+          </button>
+          <button
+            onClick={() => handleScroll("/songs")}
+            className="links-mobile"
+          >
+            Songs
           </button>
           {location.pathname == "/meetups" && (
             <button className="links-mobile" onClick={() => setOpenModal(true)}>

@@ -15,6 +15,9 @@ const SearchBar = (props) => {
       case "/meetups":
         setPlaceHolderText("Search Meetups");
         break;
+      case "/songs":
+        setPlaceHolderText("Search Songs");
+        break;
       default:
         setPlaceHolderText("Search Setlists");
         break;
