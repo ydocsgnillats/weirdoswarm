@@ -5,60 +5,53 @@ import { useState, useEffect } from "react";
 
 function Songs() {
   const [filter, setFilter] = useState("");
-  const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [backendData, setBackendData] = useState([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    fetch("/songs")
+      .then((d) => d.text())
+      .then((d) => setBackendData(JSON.parse(d)));
+  }, []);
 
-  //   useEffect(() => {
-  //     console.info("rows", data);
-  //   }, [data]);
+  useEffect(() => {
+    console.info("rows", backendData);
+  }, []);
 
-  //   useEffect(() => {
-  //     setFilteredData(
-  //       backendData.filter((set) =>
-  //         set?.venue.name.toLowerCase().includes(filter)
-  //       )
-  //     );
-  //   }, [filter]);
+  useEffect(() => {
+    setFilteredData(
+      backendData.filter((d) => d.songName.toLowerCase().includes(filter))
+    );
+  }, [filter]);
 
   return (
     <>
       <Nav setSearchQuery={(value) => setFilter(value)} />
       <Content>
-        <div>
-          {/* {typeof data === "undefined" ? (
-            <p>Loading...</p>
-          ) : ( */}
-          {/* <div>
-              {filter ? (
-                filteredData.length > 0 ? (
-                  filteredData.map((row, i) => (
-                    <Setlist
-                      key={i}
-                      venue={row?.venue.name}
-                      city={`${row?.venue.city.name}, ${row?.venue.city.stateCode}`}
-                      date={row?.eventDate}
-                      info={row?.info}
-                      sets={row?.sets}
-                    />
-                  ))
-                ) : (
-                  <Setlist venue="No results found." />
-                )
-              ) : (
-                backendData.map((row, i) => (
-                  <Setlist
-                    key={i}
-                    venue={row?.venue.name}
-                    city={`${row?.venue.city.name}, ${row?.venue.city.stateCode}`}
-                    date={row?.eventDate}
-                    info={row?.info}
-                    sets={row?.sets}
-                  />
-                ))
-              )}
-            </div> */}
-          {/* )} */}
+        <div className="song">
+          <span className="songs-title">Songs</span>
+          <span className="songs-counts">Times Played Live</span>
+        </div>
+        <div className="songs">
+          {filter ? (
+            filteredData.length > 0 ? (
+              filteredData.map((row, i) => (
+                <div key={i} className="song">
+                  <span className="songs-name">{row.songName}</span>
+                  <span className="songs-count">{row.songCount}</span>
+                </div>
+              ))
+            ) : (
+              <div className="song">No Songs Found</div>
+            )
+          ) : (
+            backendData.map((row, i) => (
+              <div key={i} className="song">
+                <span className="songs-name">{row.songName}</span>
+                <span className="songs-count">{row.songCount}</span>
+              </div>
+            ))
+          )}
         </div>
       </Content>
     </>
