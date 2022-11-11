@@ -56,6 +56,9 @@ function Nav(props) {
         <button onClick={() => handleScroll("/songs")} className="links">
           Songs
         </button>
+        <button onClick={() => handleScroll("/games")} className="links">
+          Games
+        </button>
         <a
           className="links"
           href="https://jollyswapper.com/gatorgang"
@@ -92,17 +95,23 @@ function Nav(props) {
           >
             Meetups
           </button>
+          {location.pathname == "/meetups" && (
+            <button className="links-mobile" onClick={() => setOpenModal(true)}>
+              Host A Meetup
+            </button>
+          )}
           <button
             onClick={() => handleScroll("/songs")}
             className="links-mobile"
           >
             Songs
           </button>
-          {location.pathname == "/meetups" && (
-            <button className="links-mobile" onClick={() => setOpenModal(true)}>
-              Host A Meetup
-            </button>
-          )}
+          <button
+            onClick={() => handleScroll("/games")}
+            className="links-mobile"
+          >
+            Games
+          </button>
           <a
             className="links-mobile"
             href="https://jollyswapper.com/gatorgang"
