@@ -1,9 +1,4 @@
 import "./style.scss";
-<<<<<<< HEAD
-
-function Picture(props) {
-  return props.source ? <img className="picture" src={props.source} /> : "";
-=======
 import { Image } from "react-image-and-background-image-fade";
 import Loading from "../Loading";
 
@@ -16,7 +11,6 @@ function Picture(props) {
       renderLoader={({ hasLoaded, hasFailed }) => <Loading />}
     />
   );
->>>>>>> a957e64 (changes)
 }
 
 export default Picture;

@@ -2,16 +2,11 @@ import "./style.scss";
 import Nav from "../../components/Nav";
 import Content from "../../components/Content";
 import Game from "../../components/Game";
-<<<<<<< HEAD
-
-function Games() {
-=======
 import { useState } from "react";
 
 function Games() {
   const [filter, setFilter] = useState("");
 
->>>>>>> a957e64 (changes)
   let games = [
     {
       name: "King Gizz Heardle Game",
@@ -27,15 +22,6 @@ function Games() {
 
   return (
     <>
-<<<<<<< HEAD
-      <Nav />
-      <Content>
-        <div className="games">
-          {console.info(games)}
-          {games.map((game, i) => (
-            <Game key={i} name={game.name} by={game.by} link={game.link} />
-          ))}
-=======
       <Nav setSearchQuery={(target) => setFilter(target)} />
       <Content>
         <div className="games">
@@ -53,7 +39,6 @@ function Games() {
             : games.map((game, i) => (
                 <Game key={i} name={game.name} by={game.by} link={game.link} />
               ))}
->>>>>>> a957e64 (changes)
         </div>
       </Content>
     </>

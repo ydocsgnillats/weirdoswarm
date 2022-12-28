@@ -1,29 +1,7 @@
 @import "../../App.scss";
 
-<<<<<<< HEAD
-.songs {
-  margin-top: 1rem;
-  overflow: scroll;
-}
-
-.song {
-  @include breakpoint(md) {
-    display: inline-flex;
-    width: 45vw;
-    padding: 2rem 5rem;
-  }
-  padding: 2rem;
-  display: flex;
-  justify-content: space-between;
-  background-color: #fff;
-  margin-bottom: 0.5rem;
-  opacity: 0.7;
-  font-size: 1.5rem;
-  align-items: center;
-=======
 .songs-list {
   margin-top: 1rem;
->>>>>>> a957e64 (changes)
 }
 
 .songs-title {
@@ -42,16 +20,5 @@
   }
   font-size: 1.5rem;
   font-weight: 600;
-<<<<<<< HEAD
-}
-
-.songs-name {
-  font-weight: 600;
-}
-
-.songs-count {
-  font-weight: 700;
-=======
   text-align: right;
->>>>>>> a957e64 (changes)
 }

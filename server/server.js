@@ -5,17 +5,6 @@ require("dotenv").config();
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-<<<<<<< HEAD
-app.use(express.static("build"));
-
-var setlistfmClient = new setlistfmJs({
-  key: process.env.key, // Insert your personal key here
-  format: "json", // "json" or "xml", defaults to "json"
-  language: "en", // defaults to "en"
-});
-
-app.get("/api/:page", function (req, res) {
-=======
 const { initializeApp, cert } = require("firebase-admin/app");
 const { getFirestore } = require("firebase-admin/firestore");
 
@@ -42,7 +31,6 @@ var setlistfmClient = new setlistfmJs({
 });
 
 app.get("/api/sets/:page", function (req, res) {
->>>>>>> a957e64 (changes)
   setlistfmClient
     .getArtistSetlists("f58384a4-2ad2-4f24-89c5-c7b74ae1cce7", {
       p: req.params["page"],
@@ -55,11 +43,7 @@ app.get("/api/sets/:page", function (req, res) {
     });
 });
 
-<<<<<<< HEAD
-app.get("/api", (req, res) => {
-=======
 app.get("/api/sets", (req, res) => {
->>>>>>> a957e64 (changes)
   setlistfmClient
     .getArtistSetlists("f58384a4-2ad2-4f24-89c5-c7b74ae1cce7", {
       p: 1,
@@ -72,9 +56,6 @@ app.get("/api/sets", (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-app.get("/songs", (req, res) => {
-=======
 app.get("/api/search", (req, res) => {
   let sets = [];
   const getAllSets = async function (pageNum = 1) {
@@ -107,7 +88,6 @@ app.get("/api/search", (req, res) => {
 });
 
 app.get("/api/songs", (req, res) => {
->>>>>>> a957e64 (changes)
   const url = process.env.songSite;
 
   axios(url)
@@ -116,21 +96,6 @@ app.get("/api/songs", (req, res) => {
       const $ = cheerio.load(html);
       const songsTable = $("tbody > tr");
       const songs = [];
-<<<<<<< HEAD
-      songsTable.each(function () {
-        const songName = $(this).find(".songName > span > .songName").text();
-        const songCount = $(this).find(".songCount > span > span").text();
-
-        if (songName !== "" && songCount !== "") {
-          songs.push({
-            songName,
-            songCount,
-          });
-        }
-      });
-
-      res.json(songs);
-=======
 
       async function getSongs() {
         const snapshot = await db.collection("Albums").get();
@@ -168,13 +133,10 @@ app.get("/api/songs", (req, res) => {
         res.json(songs);
       }
       getSongs();
->>>>>>> a957e64 (changes)
     })
     .catch(console.error);
 });
 
-<<<<<<< HEAD
-=======
 app.get("/api/meetups", (req, res) => {
   let meetups = [];
   async function getMeetups() {
@@ -187,7 +149,6 @@ app.get("/api/meetups", (req, res) => {
   getMeetups();
 });
 
->>>>>>> a957e64 (changes)
 app.get("*", (req, res) => {
   res.redirect("/");
 });

@@ -17,17 +17,10 @@
   }
 }
 .image {
-<<<<<<< HEAD
-  width: 60vw;
-  @include breakpoint(md) {
-    margin-right: 1rem;
-    width: 20vw;
-=======
   width: 60vw !important;
   @include breakpoint(md) {
     margin-right: 1rem;
     width: 20vw !important;
->>>>>>> a957e64 (changes)
   }
   pointer-events: none;
 }

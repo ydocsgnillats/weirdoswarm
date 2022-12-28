@@ -32,18 +32,8 @@ function Nav(props) {
   });
 
   useEffect(() => {
-<<<<<<< HEAD
-    setSticky(true);
-  }, [navigate]);
-
-  useEffect(() => {
-    setSticky(false);
-  }, []);
-
-=======
     return () => setSticky(true);
   }, [navigate]);
->>>>>>> a957e64 (changes)
   return (
     <>
       <Picture source={require("../../assets/weirdoswarm.png")} />
@@ -71,8 +61,6 @@ function Nav(props) {
         >
           Gift Exchange
         </a>
-<<<<<<< HEAD
-=======
         <a
           className="links"
           href="https://calendar.myadvent.net/?id=eixpuhoitd390w4ydmgrjgbsy29yea9h"
@@ -80,7 +68,6 @@ function Nav(props) {
         >
           24 Days of Gizzmas
         </a>
->>>>>>> a957e64 (changes)
         {location.pathname == "/meetups" && (
           <button className="links" onClick={() => setOpenModal(true)}>
             Host A Meetup
@@ -134,8 +121,6 @@ function Nav(props) {
           >
             Gift Exchange
           </a>
-<<<<<<< HEAD
-=======
           <a
             className="links-mobile"
             href="https://calendar.myadvent.net/?id=eixpuhoitd390w4ydmgrjgbsy29yea9h"
@@ -143,7 +128,6 @@ function Nav(props) {
           >
             24 Days of Gizzmas
           </a>
->>>>>>> a957e64 (changes)
         </div>
       )}
       <Modal

@@ -6,14 +6,10 @@ function Footer(props) {
   const [openContactModal, setOpenContactModal] = useState(false);
 
   return (
-<<<<<<< HEAD
-    <div ref={props.footRef} className="footer">
-=======
     <div
       ref={props.footRef}
       className={`footer ${props.stickyFooter ? "sticky-footer" : ""}`}
     >
->>>>>>> a957e64 (changes)
       <p className="link">
         Setlist info from{" "}
         <a href="https://www.setlist.fm" target="_blank">
@@ -26,10 +22,7 @@ function Footer(props) {
           Tetrachrome
         </a>
       </p>
-<<<<<<< HEAD
-=======
       <p className="footer-text">*Not Affiliated with the band*</p>
->>>>>>> a957e64 (changes)
       <p className="link">
         <button onClick={() => setOpenContactModal(true)} className="contact">
           Contact Us

@@ -6,3 +6,4 @@ server/.env
 client/package-lock.json
 client/src/assets/atlmeetup.jpeg
 client/package-lock.json
+server/serviceAccountKey.json

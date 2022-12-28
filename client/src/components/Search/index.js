@@ -7,10 +7,6 @@ const SearchBar = (props) => {
   const [placeHolderText, setPlaceHolderText] = useState("");
 
   useEffect(() => {
-<<<<<<< HEAD
-    console.log(props.placeHolder);
-=======
->>>>>>> a957e64 (changes)
     switch (props.placeHolder) {
       case "/sets":
         setPlaceHolderText("Search Setlists");
@@ -21,12 +17,9 @@ const SearchBar = (props) => {
       case "/songs":
         setPlaceHolderText("Search Songs");
         break;
-<<<<<<< HEAD
-=======
       case "/games":
         setPlaceHolderText("Search Games");
         break;
->>>>>>> a957e64 (changes)
       default:
         setPlaceHolderText("Search Setlists");
         break;
