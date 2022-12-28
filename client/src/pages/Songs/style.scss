@@ -1,5 +1,6 @@
 @import "../../App.scss";
 
+<<<<<<< HEAD
 .songs {
   margin-top: 1rem;
   overflow: scroll;
@@ -19,6 +20,10 @@
   opacity: 0.7;
   font-size: 1.5rem;
   align-items: center;
+=======
+.songs-list {
+  margin-top: 1rem;
+>>>>>>> a957e64 (changes)
 }
 
 .songs-title {
@@ -37,6 +42,7 @@
   }
   font-size: 1.5rem;
   font-weight: 600;
+<<<<<<< HEAD
 }
 
 .songs-name {
@@ -45,4 +51,7 @@
 
 .songs-count {
   font-weight: 700;
+=======
+  text-align: right;
+>>>>>>> a957e64 (changes)
 }

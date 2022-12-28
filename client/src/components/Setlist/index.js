@@ -1,11 +1,41 @@
+<<<<<<< HEAD
 import { isRouteErrorResponse } from "react-router";
+=======
+>>>>>>> a957e64 (changes)
 import "./style.scss";
 
 function Setlist(props) {
   return (
+<<<<<<< HEAD
     <div className="setlist" key={props.id}>
       <h1 className="venue">{props.venue}</h1>
       <h4 className="city">{props.city}</h4>
+=======
+    <div className="setlist" id="setlist" key={props.id}>
+      <h1
+        className={`venue ${
+          props.venue?.toLowerCase().includes(props.filter) ? "highlight" : ""
+        }`}
+      >
+        {props.venue}
+      </h1>
+      <div className="city-state">
+        <h4
+          className={`city ${
+            props.city?.toLowerCase().includes(props.filter) ? "highlight" : ""
+          }`}
+        >
+          {`${props.city},`}
+        </h4>
+        <h4
+          className={`state ${
+            props.state?.toLowerCase().includes(props.filter) ? "highlight" : ""
+          }`}
+        >
+          {props.state}
+        </h4>
+      </div>
+>>>>>>> a957e64 (changes)
       <h5 className="date">{props.date}</h5>
       {props?.info && <p className="info">{props.info}</p>}
       <div className="songs">

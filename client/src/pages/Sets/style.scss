@@ -1,1 +1,37 @@
+<<<<<<< HEAD
 
+=======
+.more-link {
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 20px;
+  color: white;
+  background-color: red;
+  border: 1px solid red;
+  border-radius: 6px;
+  opacity: 0.95;
+  cursor: pointer;
+  &:hover {
+    color: black;
+    border-radius: 6px;
+    border: 1px solid red;
+  }
+}
+
+.more-container {
+  width: 100%;
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+  background-color: #fff;
+  opacity: 0.8;
+}
+
+.no-results {
+  // margin-bottom: 3rem;
+  background: #fff;
+  opacity: 0.8;
+  padding: 5rem;
+  font-size: 2rem;
+}
+>>>>>>> a957e64 (changes)

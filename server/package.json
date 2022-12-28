@@ -16,6 +16,10 @@
     "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+<<<<<<< HEAD
+=======
+    "firebase-admin": "^11.2.1",
+>>>>>>> a957e64 (changes)
     "ftp-deploy": "^2.4.3",
     "setlistfm-js": "^1.2.0"
   },

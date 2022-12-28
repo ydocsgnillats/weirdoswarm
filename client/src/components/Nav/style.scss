@@ -1,6 +1,10 @@
 @import "../../App.scss";
 
 .nav {
+<<<<<<< HEAD
+=======
+  position: relative;
+>>>>>>> a957e64 (changes)
   display: inline-flex;
   align-items: center;
   padding: 5px;
@@ -8,6 +12,10 @@
   width: 100%;
   background-color: black;
   justify-content: center;
+<<<<<<< HEAD
+=======
+  z-index: 1;
+>>>>>>> a957e64 (changes)
   @include breakpoint(md) {
     justify-content: unset;
   }

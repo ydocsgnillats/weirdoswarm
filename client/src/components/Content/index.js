@@ -8,7 +8,11 @@ function Content(props) {
         <div className="leftside"></div>
         <div className="middle">{props.children}</div>
         <div className="rightside"></div>
+<<<<<<< HEAD
         <Footer footRef={props.footRef} />
+=======
+        <Footer footRef={props.footRef} stickyFooter={props.stickyFooter} />
+>>>>>>> a957e64 (changes)
       </div>
     </>
   );

@@ -1,12 +1,21 @@
 @import "../../App.scss";
 
 .picture {
+<<<<<<< HEAD
   height: 40vh;
   width: 100vw;
   pointer-events: none;
 
   @include breakpoint(md) {
     height: 91vh;
+=======
+  height: 40vh !important;
+  width: 100vw;
+  pointer-events: none;
+
+  @include breakpoint(sm) {
+    height: 91vh !important;
+>>>>>>> a957e64 (changes)
     padding: 0;
   }
 }

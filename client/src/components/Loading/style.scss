@@ -1,0 +1,31 @@
+@import "../../App.scss";
+.loading {
+  display: flex;
+  width: 100%;
+  margin: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-text {
+  position: absolute;
+  font-size: 4rem;
+  font: bold;
+  z-index: 1;
+  opacity: 0.8;
+  color: white;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+.nonagon {
+  animation: spin 12s linear infinite;
+  opacity: 0.7;
+  filter: drop-shadow(8px 8px 8px rgb(255 0 0 / 0.6));
+}
