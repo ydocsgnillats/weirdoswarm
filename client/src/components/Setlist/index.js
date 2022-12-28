@@ -3,6 +3,9 @@ import { isRouteErrorResponse } from "react-router";
 import "./style.scss";
 
 function Setlist(props) {
+
+  let date = `${props.date.slice(3,6)}${props.date.slice(0,3)}${props.date.slice(6,10)}`;
+
   return (
     <div className="setlist" id="setlist" key={props.id}>
       <h1
@@ -28,7 +31,7 @@ function Setlist(props) {
           {props.state}
         </h4>
       </div>
-      <h5 className="date">{props.date}</h5>
+      <h5 className="date">{date}</h5>
       {props?.info && <p className="info">{props.info}</p>}
       <div className="songs">
         {props.sets?.set.length ? (
